@@ -1,0 +1,14 @@
+from starlette.applications import Starlette
+from starlette.routing import Route
+from starlette.templating import Jinja2Templates
+
+templates = Jinja2Templeates(directory='templates')
+
+async def index(request):
+    return templates.TemplateResponse(
+        'index.html', {'name': 'World'}
+    )
+
+app = Starlette(routes=[
+    Route('/', index)
+])
