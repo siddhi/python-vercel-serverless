@@ -6,7 +6,7 @@ templates = Jinja2Templates(directory='templates')
 
 async def index(request):
     return templates.TemplateResponse(
-        'index.html', {'name': 'World'}
+        'index.html', {'name': 'World', 'request': request}
     )
 
 app = Starlette(routes=[
